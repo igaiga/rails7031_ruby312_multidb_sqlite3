@@ -22,11 +22,17 @@
 # strategy for connection switching and pass that into the middleware through
 # these configuration options.
 #
-Rails.application.configure do
-  config.active_record.database_selector = { delay: 2.seconds }
-  config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
-  config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
-end
+
+# 理由は調べてないが、ここに書くと読み込みが間に合わないのか、ActiveRecord::Middleware::DatabaseSelector がmiddlewareへ追加されなかった。
+# application.rbへ移動したところ追加されるようになった。
+# class MyContext
+# end
+# Rails.application.configure do
+#   config.active_record.database_selector = { delay: 2.seconds }
+#   config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
+#   config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
+# #  config.active_record.database_resolver_context = MyContext
+# end
 #
 # Enable Shard Selector
 #
