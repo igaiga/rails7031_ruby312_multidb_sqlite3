@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Write logs</h1>
+
+<div id="write_logs">
+  <% @write_logs.each do |write_log| %>
+    <%= render write_log %>
+    <p>
+      <%= link_to "Show this write log", write_log %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New write log", new_write_log_path %>

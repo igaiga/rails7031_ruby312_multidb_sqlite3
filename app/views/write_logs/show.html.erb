@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @write_log %>
+
+<div>
+  <%= link_to "Edit this write log", edit_write_log_path(@write_log) %> |
+  <%= link_to "Back to write logs", write_logs_path %>
+
+  <%= button_to "Destroy this write log", @write_log, method: :delete %>
+</div>

@@ -1,0 +1,2 @@
+class WriteLog < ApplicationRecord
+end
