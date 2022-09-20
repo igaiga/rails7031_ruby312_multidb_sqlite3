@@ -1,24 +1,9 @@
-# README
+## 最終書き込み日時の書き込み先を変更するサンプルコード
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+`config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session`
 
-Things you may want to cover:
+を次のように変更している。
 
-* Ruby version
+`config.active_record.database_resolver_context = MyContext`
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+MyContextクラスはひとまずconfig/application.rbに書いてある。
